@@ -1,0 +1,138 @@
+setup project
+
+1. Create and activate a virtual environment (we use venv)
+  mkdir venv
+  python3 -m venv ./venv
+  source ./venv/bin/activate
+2. Install packages
+  pip3 install -r requirements.txt
+3. Install tailwind
+  [Note: you must have node.js installed on your machine]
+  python3 manage.py tailwind install
+  python3 manage.py tailwind start
+
+  ------------
+
+Django Start project
+1. django-admin startproject projectname .
+
+ ------------
+
+Django tailwind - install
+1. 
+INSTALLED_APPS = [
+  # other Django apps
+  'tailwind',
+]
+
+2. python manage.py tailwind init
+    name app_name = theme
+
+    INSTALLED_APPS = [
+    # other Django apps
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+    ]
+
+3. settings.py > 
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+4. python manage.py tailwind install
+
+5.
+MIDDLEWARE = [
+  # ...
+  "django_browser_reload.middleware.BrowserReloadMiddleware",
+  # ...
+]
+
+6.
+from django.urls import include, path
+urlpatterns = [
+    ...,
+    path("__reload__/", include("django_browser_reload.urls")),
+]
+
+7. python manage.py tailwind start
+
+Tailwind-django usage:
+{% load static tailwind_tags %}
+...
+<head>
+   ...
+   {% tailwind_css %}
+   ...
+</head>
+
+ ------------
+
+To create a new app
+
+1. Make a directory inside app folder
+  mkdir .apps/[app_name]
+2. Create the app inside the freshly made directory
+  python3 manage.py startapp [app_name] ./apps/[app_name]
+3. Add the app to INSTALLED_APPS in settings.py
+4. Inside apps.py, change the name member in the Config class to [app_name]
+
+ ------------
+
+ setup Next.js
+1. pip install djangorestframework
+
+2.
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'myapp',  # Your app
+]
+
+-----------------
+create Next.js project
+1.
+npx create-next-app@latest my-next-app
+cd my-next-app
+
+------------------
+Install django CORS headers package
+1.
+pip install django-cors-headers
+
+2.
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+]
+
+3.
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    ...
+]
+
+4.
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+5. cd roam-next-app
+npm run build
+
+
+----------
+Run server
+django (backend) - python3 manage.py runserver
+nextjs (frontend) - npm run dev
+
+
+-----------
+Install maps
+npm install @types/leaflet
+
+-----------
+Yelp API
+npm install axios
