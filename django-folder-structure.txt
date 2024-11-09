@@ -1,0 +1,37 @@
+my_project/
+├── manage.py                    # Django project management script
+├── requirements.txt             # List of project dependencies
+├── .gitignore                   # Files and folders to ignore in version control
+├── env/                         # Virtual environment (often ignored in Git)
+├── my_project/                  # Project settings and main config directory
+│   ├── __init__.py
+│   ├── asgi.py                  # ASGI config (for asynchronous support)
+│   ├── settings.py              # Main project settings file
+│   ├── urls.py                  # Project-level URL configuration
+│   ├── wsgi.py                  # WSGI config (for deployment)
+│   ├── settings/                # Optional: split settings into separate files
+│       ├── __init__.py
+│       ├── base.py              # Base settings
+│       ├── development.py       # Development-specific settings
+│       ├── production.py        # Production-specific settings
+├── apps/                        # Custom applications folder
+│   ├── app1/                    # First Django app
+│   │   ├── migrations/          # Database migrations for the app
+│   │   ├── __init__.py
+│   │   ├── admin.py             # Admin configurations
+│   │   ├── apps.py              # App-specific settings
+│   │   ├── models.py            # Database models
+│   │   ├── tests.py             # App-specific tests
+│   │   ├── views.py             # App views (for handling requests)
+│   │   ├── urls.py              # App-specific URLs
+│   │   └── templates/           # App-specific HTML templates
+│       │   └── app1/            # Use app name to avoid template conflicts
+│   │       └── template1.html
+│   └── app2/                    # Second Django app (follow similar structure)
+├── static/                      # Static files (CSS, JavaScript, images)
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── templates/                   # Project-level templates (e.g., base.html)
+│   └── base.html
+└── media/                       # Media files (user-uploaded content)
