@@ -1,0 +1,27 @@
+my-next-app/
+├── .next/                      # Auto-generated build folder (ignored by Git)
+├── node_modules/               # Dependencies (ignored by Git)
+├── public/                     # Static assets accessible via root path
+│   ├── images/                 # Static images (e.g., logo.png at /images/logo.png)
+│   ├── favicon.ico             # Favicon accessible at /favicon.ico
+│   └── robots.txt              # SEO-related files
+├── src/app                        # Main source code
+│   ├── components/             # Reusable components
+│   │   ├── Button.tsx          # Example of a UI component
+│   │   └── Header.tsx          # Example of a layout component
+│   ├── layouts/                # Page layouts for consistent structure
+│   │   └── MainLayout.tsx      # Example layout file
+│   ├── hooks/                  # Custom hooks (e.g., useAuth.ts)
+|   ├── page.tsx                # main index for tsx pages
+│   ├── styles/                 # CSS modules or global styles
+│   │   ├── globals.css         # Global styles
+│   │   ├── Home.module.css     # Example CSS module for pages/index.tsx
+│   └── utils/                  # Utility functions (e.g., formatDate.ts)
+│       └── formatDate.ts
+├── .env.local                  # Environment variables (ignored by Git)
+├── .eslintrc.json              # ESLint configuration
+├── .gitignore                  # Specifies files to ignore in Git
+├── next.config.js              # Next.js configuration file
+├── tsconfig.json               # TypeScript configuration
+├── package.json                # Dependencies and scripts
+└── README.md                   # Project documentation
